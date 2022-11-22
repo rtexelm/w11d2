@@ -9,23 +9,15 @@ import ClimateStats from "./ClimateStats";
 function Greenhouse() {
   const { themeName, setThemeName } = useTheme();
 
-  if (themeName === "day") {
-    return (
-      <section>
-        <img className="greenhouse-img" src={dayImage} alt="greenhouse" />
-        <LightSwitch />
-        <ClimateStats />
-      </section>
-    );
-  } else {
-    return (
-      <section>
-        <img className="greenhouse-img" src={nightImage} alt="greenhouse" />
-        <LightSwitch />
-        <ClimateStats />
-      </section>
-    );
-  }
+  let themeImage = themeName === "day" ? dayImage : nightImage;
+
+  return (
+    <section>
+      <img className="greenhouse-img" src={themeImage} alt="greenhouse" />
+      <LightSwitch />
+      <ClimateStats />
+    </section>
+  );
 }
 
 export default Greenhouse;
