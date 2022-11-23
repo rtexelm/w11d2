@@ -7,7 +7,7 @@ import LightSwitch from "./LightSwitch";
 import ClimateStats from "./ClimateStats";
 
 function Greenhouse() {
-  const { themeName, setThemeName } = useTheme();
+  const { themeName } = useTheme();
 
   let themeImage = themeName === "day" ? dayImage : nightImage;
 
